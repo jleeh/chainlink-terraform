@@ -50,6 +50,19 @@ Or using a different AWS region:
 
 `terraform apply -var 'region=eu-west-1'`
 
+## Updating
+
+Any further updates to this repository can be applied to your own AWS account by re-running `terraform apply`.
+
+**Important:** If you're applying changes and notice that the `aws_instance` is being recreated, this will cause you to 
+loose all your data. If this is shown, backup your `/root/.chainlink` folder on the instance and copy it to the new one.
+
+## Deleting
+
+To destroy the Chainlink EC2 instance and all subsequent resources, run:
+
+`terraform destroy`
+
 ## Viewing Logs
 
 If you browse to CloudWatch in the AWS console and click "Logs", you should then see a `chainlink-tf` group with logs
